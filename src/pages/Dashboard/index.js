@@ -80,7 +80,7 @@ export default function Dashboard() {
       await api.post(`meetups/${meetup.id}/subscriptions`);
       Alert.alert(
         'Sucesso',
-        `Você se inscreveu com sucesso em ${meetup.name}.`
+        `Você se inscreveu com sucesso em "${meetup.title}".`
       );
     } catch (err) {
       Alert.alert('Erro', 'Erro ao se inscrever no meetup.');

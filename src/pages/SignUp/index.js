@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Image } from 'react-native';
+import { Alert, Image } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import logo from '~/assets/logo.png';
@@ -29,7 +29,7 @@ export default function SingUp({ navigation }) {
   const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit() {
-    dispatch(signUpRequest(name, email, password));
+    dispatch(signUpRequest(name, email, password, navigation));
   }
 
   return (

@@ -30,13 +30,17 @@ export function* signIn({ payload }) {
 
 export function* signUp({ payload }) {
   try {
-    const { name, email, password } = payload;
+    const { name, email, password, navigation } = payload;
 
     yield call(api.post, 'users', {
       name,
       email,
       password,
     });
+
+    Alert.alert('Sucesso', 'Usuário cadastrado com sucesso.');
+
+    navigation.navigate('SignIn');
   } catch (err) {
     Alert.alert('Erro no cadastro', 'Falha no cadastro, verifique seus dados.');
 
